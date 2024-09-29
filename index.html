@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths Help</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.7.0/math.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Math Solver</h1>
+        <button id="theme-toggle" aria-label="Toggle theme">
+            <img src="sun.svg" alt="Light Mode" class="icon" id="sun-icon">
+            <img src="moon.svg" alt="Dark Mode" class="icon" id="moon-icon">
+        </button>
+    </header>
+    <div class="container">
+        <main>
+            <section id="options">
+                <!-- Options Section -->
+                <button onclick="showSection('calculator')">Calculator</button>
+                <button onclick="showSection('integration')">Integration</button>
+                <button onclick="showSection('differentiation')">Differentiation</button>
+                <button onclick="showSection('solve-algebra')">Solve Algebra</button>
+            </section>
+            
+            <!-- Section contents -->
+            <section id="calculator" class="section-content active">
+                <h2>Calculator</h2>
+                <form id="calculator-form">
+                    <label for="calculator-input">Calculator Input:</label>
+                    <input type="text" id="calculator-input" name="calculator-input" placeholder="Enter expression">
+                    <div class="calculator-grid">
+                        <!-- Row 1 -->
+                        <button type="button" class="calc-button" data-value="π">π</button>
+                        <button type="button" class="calc-button" data-value="sin">sin</button>
+                        <button type="button" class="calc-button" data-value="cos">cos</button>
+                        <button type="button" class="calc-button" data-value="tan">tan</button>
+                        
+                        <!-- Row 2 -->
+                        <button type="button" class="calc-button" data-value="asin">sin<sup>-1</sup></button>
+                        <button type="button" class="calc-button" data-value="acos">cos<sup>-1</sup></button>
+                        <button type="button" class="calc-button" data-value="atan">tan<sup>-1</sup></button>
+                        
+                        <!-- Row 3 -->
+                        <button type="button" class="calc-button" data-value="sec">sec</button>
+                        <button type="button" class="calc-button" data-value="cosec">cosec</button>
+                        <button type="button" class="calc-button" data-value="cot">cot</button>
+                        
+                        <!-- Row 4 -->
+                        <button type="button" class="calc-button" data-value="asec">sec<sup>-1</sup></button>
+                        <button type="button" class="calc-button" data-value="acosec">cosec<sup>-1</sup></button>
+                        <button type="button" class="calc-button" data-value="acot">cot<sup>-1</sup></button>
+                        
+                        <!-- Row 5 -->
+                        <button type="button" class="calc-button" data-value="log">log</button>
+                        <button type="button" class="calc-button" data-value="nCr">nCr</button>
+                        <button type="button" class="calc-button" data-value="nPr">nPr</button>
+            
+                        <!-- The '=' button placed in its own row at the bottom -->
+                        <button type="button" id="calc-equal">=</button>
+                    </div>
+                </form>
+                <div id="calculator-result"></div>
+            </section>
+            
+            <section id="integration" class="section-content">
+                <h2>Integration</h2>
+                <form id="integration-form">
+                    <label for="integration-input">Enter your integration problem:</label>
+                    <input type="text" id="integration-input" name="integration-input" required>
+                    <button type="submit">Integrate</button>
+                </form>
+                <div id="integration-result"></div>
+            </section>
+            <section id="differentiation" class="section-content">
+                <h2>Differentiation</h2>
+                <form id="differentiation-form">
+                    <label for="differentiation-input">Enter your differentiation problem:</label>
+                    <input type="text" id="differentiation-input" name="differentiation-input" required>
+                    <button type="submit">Differentiate</button>
+                </form>
+                <div id="differentiation-result"></div>
+            </section>
+            <section id="solve-algebra" class="section-content">
+                <h2>Solve Algebra</h2>
+                <form id="solve-algebra-form">
+                    <label for="solve-algebra-input">Enter your algebra question:</label>
+                    <input type="text" id="solve-algebra-input" name="solve-algebra-input" required>
+                    <button type="submit">Solve</button>
+                </form>
+                <div id="solve-algebra-result"></div>
+            </section>
+            <section id="sec" class="section-content">
+                <h2>Secant Function</h2>
+                <form id="sec-form">
+                    <label for="sec-input">Enter your secant function:</label>
+                    <input type="text" id="sec-input" name="sec-input" required>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="sec-result"></div>
+            </section>
+            <section id="cosec" class="section-content">
+                <h2>Cosecant Function</h2>
+                <form id="cosec-form">
+                    <label for="cosec-input">Enter your cosecant function:</label>
+                    <input type="text" id="cosec-input" name="cosec-input" required>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="cosec-result"></div>
+            </section>
+            <section id="cot" class="section-content">
+                <h2>Cotangent Function</h2>
+                <form id="cot-form">
+                    <label for="cot-input">Enter your cotangent function:</label>
+                    <input type="text" id="cot-input" name="cot-input" required>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="cot-result"></div>
+            </section>
+            <section id="sec^-1" class="section-content">
+                <h2>Secant Inverse Function</h2>
+                <form id="sec^-1-form">
+                    <label for="sec^-1-input">Enter your secant inverse function:</label>
+                    <input type="text" id="sec^-1-input" name="sec^-1-input" required>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="sec^-1-result"></div>
+            </section>
+            <section id="cosec^-1" class="section-content">
+                <h2>Cosecant Inverse Function</h2>
+                <form id="cosec^-1-form">
+                    <label for="cosec^-1-input">Enter your cosecant inverse function:</label>
+                    <input type="text" id="cosec^-1-input" name="cosec^-1-input" required>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="cosec^-1-result"></div>
+            </section>
+            <section id="cot^-1" class="section-content">
+                <h2>Cotangent Inverse Function</h2>
+                <form id="cot^-1-form">
+                    <label for="cot^-1-input">Enter your cotangent inverse function:</label>
+                    <input type="text" id="cot^-1-input" name="cot^-1-input" required>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="cot^-1-result"></div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <footer>
+        <p>Made by Priyanshu Chawda</p>
+    </footer>
+</body>
+</html>

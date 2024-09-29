@@ -1,0 +1,254 @@
+/* General text color */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header and buttons */
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+    position: relative;
+}
+
+#theme-toggle {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.container {
+    padding: 2em;
+    transition: background-color 0.3s;
+}
+
+h1, h2 {
+    margin: 0 0 1em;
+}
+
+/* Main content styles */
+main {
+    background: white;
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section styles */
+.section-content {
+    display: none;
+}
+
+.section-content.active {
+    display: block;
+}
+
+/* Calculator input and grid */
+#calculator-input {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    text-align: right;
+}
+
+/* Grid for calculator buttons */
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    margin-bottom: 1em; /* Add margin at the bottom to separate from other content */
+}
+
+.calc-button {
+    padding: 1em;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.calc-button:hover, .calc-button:focus {
+    background-color: #005bb5;
+}
+
+/* '=' button styles */
+#calc-equal {
+    grid-column: span 4;
+    background-color: #28a745;
+    padding: 1em;
+    font-size: 1.5em; /* Increase font size for better visibility */
+    border-radius: 4px;
+    border: none;
+    color: white; /* Ensure text color is white */
+    transition: background-color 0.3s;
+}
+
+#calc-equal:hover, #calc-equal:focus {
+    background-color: #218838;
+}
+
+/* Calculator result */
+#calculator-result {
+    margin-top: 1em;
+    font-size: 1.2em;
+    background-color: white; /* Light background for readability */
+    color: #333; /* Dark text for contrast */
+    padding: 1em;
+    border-radius: 4px; /* Rounded corners for better aesthetics */
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode header {
+    background-color: #005bb5;
+}
+
+.dark-mode .container {
+    background-color: #444;
+}
+
+.dark-mode .calc-button {
+    background-color: #005bb5;
+}
+
+.dark-mode .calc-button:hover, .dark-mode .calc-button:focus {
+    background-color: #004094;
+}
+
+.dark-mode #calc-equal {
+    background-color: #218838;
+}
+
+.dark-mode #calc-equal:hover, .dark-mode #calc-equal:focus {
+    background-color: #1e7e34;
+}
+
+/* Calculator result in dark mode */
+.dark-mode #calculator-result {
+    background-color: #555; /* Darker background for dark mode */
+    color: white; /* White text for visibility */
+    padding: 1em;
+    border-radius: 4px;
+}
+
+/* Section headers and labels */
+.dark-mode h2,
+.dark-mode label {
+    background-color: #0073e6; /* Blue background color */
+    color: white; /* White text color */
+    padding: 0.5em; /* Padding to make it appear like a button */
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Ensure form and input text is visible */
+.dark-mode input, 
+.dark-mode button {
+    color: white; /* Ensure text color is white */
+    background-color: #555; /* Background color slightly different from the main background */
+}
+
+.dark-mode input::placeholder {
+    color: #ccc; /* Placeholder text color */
+}
+
+/* Update the theme toggle button styles to handle icon visibility */
+#sun-icon {
+    display: none;
+}
+
+#moon-icon {
+    display: block;
+}
+
+.dark-mode #sun-icon {
+    display: block;
+}
+
+.dark-mode #moon-icon {
+    display: none;
+}
+
+/* Button styles for options */
+#options button {
+    background-color: #0073e6; /* Blue color for buttons */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 0.8em 1.5em; /* Increased padding for larger size */
+    font-size: 1.2em; /* Increased font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    margin: 0.5em; /* Add margin around buttons for spacing */
+}
+
+#options button:hover, #options button:focus {
+    background-color: #005bb5; /* Darker blue color on hover */
+}
+
+/* Footer styles */
+footer {
+    background-color: #0073e6; /* Blue background color */
+    color: white; /* White text color */
+    text-align: center; /* Center align text */
+    padding: 1em; /* Add some padding */
+    position: fixed; /* Fixed position at the bottom */
+    bottom: 0;
+    width: 100%; /* Full width */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+    font-size: 0.9em; /* Slightly smaller text */
+}
+
+.dark-mode footer {
+    background-color: #005bb5; /* Darker blue for dark mode */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .calculator-grid {
+        grid-template-columns: repeat(2, 1fr); /* Adjust grid for smaller screens */
+    }
+}
+
+/* Footer styles */
+footer {
+    background-color: rgba(0, 0, 0, 0); /* Fully transparent background */
+    text-align: center; /* Center align text */
+    padding: 1em; /* Add some padding */
+    position: fixed; /* Fixed position at the bottom */
+    bottom: 0;
+    width: 100%; /* Full width */
+    box-shadow: none; /* Remove shadow */
+    font-size: 0.9em; /* Slightly smaller text */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    color: black; /* Black text color */
+}
+
+.dark-mode footer {
+    background-color: rgba(0, 0, 0, 0); /* Fully transparent background for dark mode */
+}
